@@ -17,7 +17,7 @@
 				<th>First Name</th>
 				<th>Street Address</th>
 				<th>Actions 	
-					<a href="formulario.php' . '" class="mr-2" title="New File" data-toggle="tooltip"><span class="fa fa-pencil-square-o"></span></a>
+					<a href="customer_new.php" class="mr-2" title="New File" data-toggle="tooltip"><span class="fa fa-pencil-square-o"></span></a>
 				</th>
 			</tr>
 		</thead>
@@ -27,8 +27,8 @@
 					echo 
 						"<tr>" . 
 							"<td>" . $row->customer_id     . "</td>" .
-							"<td>" . $row->customer_first_name  . "</td>" .
-							"<td>" . $row->customer_last_name . "</td>" .
+							"<td>" . $row->cust_first_name  . "</td>" .
+							"<td>" . $row->cust_last_name . "</td>" .
 							"<td>" . $row->cust_street_address . "</td>" .
                             "<td>" .
 								'<a href="customer_update.php?id=' . $row->customer_id . '" class="mr-2" title="Update File" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>' .

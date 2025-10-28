@@ -10,8 +10,8 @@
 			// Constructor
 			public function __construct(    
 				public ?int    $customer_id=null,
-				public ?string $customer_first_name=null,
-				public ?string $customer_last_name=null,
+				public ?string $cust_first_name=null,
+				public ?string $cust_last_name=null,
 				public ?string $cust_street_address=null,
 				public ?string $cust_postal_code=null,
 				public ?string $cust_city=null,
@@ -46,11 +46,11 @@
 				// Connectar a la base de dades
 				if (isset($this->customer_id)) {
 					// Preparar l'INSERT / UPDATE
-					$sql = "INSERT INTO $table (customer_id, customer_first_name, customer_last_name, cust_street_address, cust_postal_code, cust_city, cust_state, cust_country, phone_numbers, nls_language, nls_territory, credit_limit, cust_email, account_mgr_id, cust_geo_location, date_of_birth, marital_status, gender, income_level)
+					$sql = "INSERT INTO $table (customer_id, cust_first_name, cust_last_name, cust_street_address, cust_postal_code, cust_city, cust_state, cust_country, phone_numbers, nls_language, nls_territory, credit_limit, cust_email, account_mgr_id, cust_geo_location, date_of_birth, marital_status, gender, income_level)
         					VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         					ON DUPLICATE KEY UPDATE
-								customer_first_name 	= VALUES(customer_first_name),
-								customer_last_name 		= VALUES(customer_last_name),
+								cust_first_name 		= VALUES(cust_first_name),
+								cust_last_name 			= VALUES(cust_last_name),
 								cust_street_address 	= VALUES(cust_street_address),
 								cust_postal_code 		= VALUES(cust_postal_code),
 								cust_city 				= VALUES(cust_city),
@@ -73,8 +73,8 @@
 					$stmt->bind_param(
 						"isssssssssssdssssss",
 						$this->customer_id,
-						$this->customer_first_name,
-						$this->customer_last_name,
+						$this->cust_first_name,
+						$this->cust_last_name,
 						$this->cust_street_address,
 						$this->cust_postal_code,
 						$this->cust_city,
